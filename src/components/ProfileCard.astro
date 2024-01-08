@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+import profilePic from '../images/image-victor.jpg'
+
+const { name, age, location, followers, likes, photos } = Astro.props
+---
+
+<article class="max-w-[326px] md:max-w-[350px] rounded-[15px] bg-white shadow-card z-10">
+    <div class="w-[326px] md:w-[350px] h-[140px] bg-card bg-cover bg-no-repeat rounded-t-[15px] relative">
+        <Image src={profilePic} alt={`Headshot of ${name}`} quality="max" class="absolute rounded-[96px] bottom-[-45px] left-1/2 -translate-x-[50%] border-[5px] border-white" width={96} height={96}/>
+    </div>
+    <div class="pt-[72px]">
+       <div class="text-center pb-7">
+        <h2 class="mb-[10px] text-primary text-lg font-bold leading-none">{name} <span class="ml-[8.5px] text-secondary font-normal">{age}</span></h2>
+        <p class="text-secondary text-sm font-normal leading-none">{location}</p>
+       </div>
+       <div class="pt-6 pb-6 flex justify-between pl-[41px] pr-[52px] border-t border-t-[#E8E9EC]">
+            <div class="flex flex-col">
+                <p class="text-primary text-lg font-bold text-center ">{followers}</p>
+                <p class="text-secondary text-[0.625rem] text-center font-normal tracking-[1.5px]">Followers</p>
+            </div>
+            <div class="flex flex-col">
+                <p class="text-primary text-lg font-bold text-center ">{likes}</p>
+                <p class="text-secondary text-[0.625rem] text-center font-normal tracking-[1.5px]">Likes</p>
+            </div>
+            <div class="flex flex-col">
+                <p class="text-primary text-lg font-bold text-center ">{photos}</p>
+                <p class="text-secondary text-[0.625rem] text-center font-normal tracking-[1.5px]">Photos</p>
+            </div>
+       </div>
+    </div>
+</article>

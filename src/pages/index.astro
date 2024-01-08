@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProfileCard from '../components/ProfileCard.astro';
+
+
+const profileInfo = {
+	name: 'Victor Crest',
+	age: 26,
+	location: 'London',
+	followers: '80K',
+	likes: '803K',
+	photos: '1.4K',
+}
+---
+
+<Layout title="Profile Card">
+	<main class="min-h-screen flex items-center justify-center patterns">
+		<ProfileCard 
+			name={profileInfo.name}
+			age={profileInfo.age}
+			location={profileInfo.location}
+			followers={profileInfo.followers}
+			likes={profileInfo.likes}
+			photos={profileInfo.photos}
+		/>
+	</main>
+
+</Layout>
+
+<style>
+	.patterns {
+		background: url('/src/images/bg-pattern-top.svg') top -650px left -700px no-repeat fixed, url('/src/images/bg-pattern-bottom.svg') right -680px bottom -650px  no-repeat fixed;
+	}
+
+	@media (min-width: 768px) {
+		.patterns {
+			background: url('/src/images/bg-pattern-top.svg') top -470px left -300px no-repeat fixed, url('/src/images/bg-pattern-bottom.svg') right -230px bottom -600px  no-repeat fixed;
+		}
+	}
+</style>
